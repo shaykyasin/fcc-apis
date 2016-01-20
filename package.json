@@ -1,0 +1,27 @@
+{
+  "name": "shaykyasin-fcc-apis",
+  "version": "0.0.1",
+  "description": "FCC APIs Challenge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaykyasin/fcc-apis/"
+  },
+  "homepage": "http://www.shaykyasin.github.io/",
+  "bugs": "https://github.com/shaykyasin/fcc-apis/issues",
+  "keywords": [
+    "timestamp",
+    "header parser",
+    "node",
+    "javascript"
+  ],
+  "author": "Shayk Yasin",
+  "license": "MIT",
+  "dependencies": {}
+}

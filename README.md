@@ -4,8 +4,7 @@
 
 This dependency free node.js app was written as part of the [Freecodecamp API challenges](http://www.freecodecamp.com/map#nested-collapseAPIProjects) . A live version of the app is [here](https://shaykyasin-fcc-apis.herokuapp.com/).
 
-## Timestamp Microservice
-------------------------------
+## 1. Timestamp Microservice
 API Endpoint:
 ```
 https://shaykyasin-fcc-apis.herokuapp.com/timestamp
@@ -28,8 +27,8 @@ https://shaykyasin-fcc-apis.herokuapp.com/timestamp/1453218679
 {"unix":1453218679,"natural":"January 19, 2016"}
 
 ```
-## Request Header Parser
 ------------------------------
+## 2. Request Header Parser
 API Endpoint:
 ```
 https://shaykyasin-fcc-apis.herokuapp.com/whoami
@@ -45,6 +44,7 @@ Just send a 'GET' request to the endpoint.
 ```js
 {"ip-address":"123:123:123:123","langguage":"en-GB","operating-system":"Macintosh; Intel Mac OS X 10_9_5"}
 ```
+------------------------------
 Released under the MIT License
 
 Copyright (c) 2015 Shayk Yasin

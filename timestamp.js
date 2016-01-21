@@ -9,23 +9,23 @@ function getTimestamp(val) {
 	}
 }
 
-module.exports = function(query, req) {
+module.exports = function(query, req, res) {
 	if(req.method == 'GET')	{
-	query = query.substr(1)
-	var res = {}
+	var reply = {}
 		if (isNaN(query)) {
 			var d = new Date(query + ' 00:00:00')
 			if(d == 'Invalid Date') {
-				res = {
+				reply = {
 					unix: null,
 					natural: null
 				}
 			} else {
-				res = getTimestamp(d.getTime())
+				reply = getTimestamp(d.getTime())
 			}
 		} else {
-			res = getTimestamp(query + '000')
+			reply = getTimestamp(query + '000')
 		}
-		return JSON.stringify(res)
+		res.writeHead(200, '{"Content-Type": "application/json"')
+		res.end(JSON.stringify(reply))
 	}
 }

@@ -11,7 +11,7 @@ var hits = 0
 
 var server = http.createServer(function (request, response) {
 	hits++
-	var query = decodeURI(url.parse(request.url, true).pathname.substr(1))
+	var query = decodeURI(url.parse(request.url, true).path.substr(1))
 	var servicesList = ['timestamp', 'whoami', 'shorty']
 	var i = 0
 	console.log('Requests served since up: ' + hits)

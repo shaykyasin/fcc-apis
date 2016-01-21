@@ -1,4 +1,5 @@
-var json = JSON.parse(require('fs').readFileSync('redirect.json', 'utf8'))
+var fs = require('fs')
+var json = JSON.parse(fs.readFileSync('redirect.json', 'utf8'))
 
 function sendError(res, msg){
 	res.writeHead(200, '{"Content-Type": "application/json"')
@@ -6,7 +7,6 @@ function sendError(res, msg){
 }
 
 module.exports = function(query, req, res) {
-	console.log(query)
 	if (!isNaN(query) || /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/.test(query)) {
 		if(isNaN(query)){
 			if(query.charAt(query.length - 1) != '/') query = query + '/'

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shayk Yasin - URL Shortener</title>
+	<link rel="shortcut icon" href="http://shaykyasin.github.io/favicon.ico">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="octo"><a href="https://github.com/shaykyasin/fcc-apis" target="blank"><img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/white/png/64/github.png" alt="find me on github"/></a>
+	</div>
+	<h1>File Sizer</h1>
+	<p>Usage:</p>
+	<div class="code">
+		POST a FormData Object through AJAX to this endpoint:<br/><br/>
+		https://shaykyasin-fcc-apis.herokuapp.com/sizer/data
+	</div>
+	<p>JSON response:</p>
+	<div class="code">
+		{fileSize: "1.58 KB", sizeInBytes: 1613}
+	</div>
+	<p>Demo:</p>
+	<form enctype="multipart/form-data" method="post" name="fileinfo">
+		<input type="file" name="file" id="file" class="inputfile" required />
+		<label for="file"><span>Choose a file</span></label>
+		<input type="submit" class="myButton" id="upload" value="Upload" />
+	</form>
+	<script>
+		var form = document.forms.namedItem("fileinfo");
+		form.addEventListener('submit', function(ev) {
+			fdata = new FormData(form);
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "sizer/data", true);
+			xhr.onload = function() {
+				if (xhr.status == 200) {
+					var data = JSON.parse(xhr.responseText);
+					alert("File Size is " + data.fileSize + " Bytes");
+				} else {
+					alert("Error " + xhr.status + " occurred when trying to upload your file.<br \/>");
+				}
+			};
+
+			xhr.send(fdata);
+			ev.preventDefault();
+		}, false);
+		//pure styling
+		var input = document.querySelector( '.inputfile' );
+		var label	 = input.nextElementSibling,
+		labelVal = label.innerHTML;
+
+		input.addEventListener( 'change', function( e )	{
+			var fileName = '';
+			fileName = e.target.value.split( '\\' ).pop();
+			label.querySelector( 'span' ).innerHTML = fileName;
+		});
+	</script>
+</body>
+</html>

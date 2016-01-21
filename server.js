@@ -1,20 +1,20 @@
 var http = require('http')
-var url = require('url')
 var fs = require('fs')
 
 var services = {
 	timestamp: require('./timestamp'),
 	whoami: require('./whoami'),
-	shorty: require('./shorty')
+	shorty: require('./shorty'),
+	sizer: require('./sizer')
 }
 var hits = 0
 
 var server = http.createServer(function (request, response) {
 	hits++
-	var query = decodeURI(url.parse(request.url, true).path.substr(1))
-	var servicesList = ['timestamp', 'whoami', 'shorty']
+	var query = decodeURI(request.url.substr(1))
+	var servicesList = ['timestamp', 'whoami', 'shorty', 'sizer']
 	var i = 0
-	console.log('Requests served since up: ' + hits)
+	console.log('Request: ' + hits + '. Path: ' + query)
 	if(query == '') {
 		staticServe('index', response)
 	} else if (query == 'style.css') {

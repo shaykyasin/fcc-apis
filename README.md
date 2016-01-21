@@ -66,6 +66,25 @@ https://shaykyasin-fcc-apis.herokuapp.com/shorty/http://www.freecodecamp.com
 The returned 'shorturl' can now be used and it will redirected to the appropriate url.
 
 ---
+## 4. File Metadata Microservice
+### API Endpoint:
+```
+https://shaykyasin-fcc-apis.herokuapp.com/sizer/data
+```
+The contracts of the app are as follows:
+> User stories:
+*  I can submit a FormData object that includes a file upload.
+* When I submit something, I will receive the file size in bytes within the JSON response
+
+#### Usage
+POST a FormData Object through XHR to the above endpoint.
+#### Response
+JSON object containing file size in bytes.
+```js
+{fileSize: 1613}
+```
+
+---
 Released under the MIT License
 
 Copyright (c) 2015 Shayk Yasin

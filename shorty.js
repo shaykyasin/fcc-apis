@@ -1,5 +1,5 @@
 var fs = require('fs')
-var json = JSON.parse(fs.readFileSync('redirect.json', 'utf8'))
+var json = {urls:1,"http://www.freecodecamp.com/":1}
 
 function sendError(res, msg){
 	res.writeHead(200, '{"Content-Type": "application/json"')

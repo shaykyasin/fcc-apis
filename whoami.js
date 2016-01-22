@@ -8,7 +8,7 @@ module.exports = function(query, req, res) {
 		ua = ua.substring(ua.indexOf('(') + 1, ua.indexOf(')'))
 		lang = lang.substring(0, langend)
 
-		res.writeHead(200, '{"Content-Type": "application/json"')
+		res.writeHead(200, '{"Content-Type": "application/json"}')
 		res.end(JSON.stringify({
 				"ip-address": ip,
 				"language": lang,

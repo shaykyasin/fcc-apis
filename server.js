@@ -5,14 +5,15 @@ var services = {
 	timestamp: require('./timestamp'),
 	whoami: require('./whoami'),
 	shorty: require('./shorty'),
-	sizer: require('./sizer')
+	sizer: require('./sizer'),
+	lookerup: require('./lookerup')
 }
 var hits = 0
 
 var server = http.createServer(function (request, response) {
 	hits++
 	var query = decodeURI(request.url.substr(1))
-	var servicesList = ['timestamp', 'whoami', 'shorty', 'sizer']
+	var servicesList = ['timestamp', 'whoami', 'shorty', 'sizer', 'lookerup']
 	var i = 0
 	console.log('Request: ' + hits + '. Path: ' + query)
 	if(query == '') {
@@ -23,6 +24,7 @@ var server = http.createServer(function (request, response) {
 		for(var j; j=servicesList[i]; i++) {
 			if(query.substr(0, j.length) == j) {
 				query = query.substr(j.length + 1)
+				console.log('Query 2: ' + query)
 				if (query || i == 1) {
 					services[j](query, request, response)
 				} else{

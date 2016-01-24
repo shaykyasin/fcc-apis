@@ -24,7 +24,6 @@ var server = http.createServer(function (request, response) {
 		for(var j; j=servicesList[i]; i++) {
 			if(query.substr(0, j.length) == j) {
 				query = query.substr(j.length + 1)
-				console.log('Query 2: ' + query)
 				if (query || i == 1) {
 					services[j](query, request, response)
 				} else{

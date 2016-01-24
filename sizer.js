@@ -7,19 +7,12 @@ module.exports = function(query, req, res) {
 
 		req.on('end', function(){
 			data = data.split('\r\n')
-			res.writeHead(200, '{"Content-Type": "application/json"}')
-			if (data.length == 7) {
-				res.end(JSON.stringify({fileSize: data[4].length}))
-			} else {
-				for(var i=0; i < 4; i++) {
-					data.shift()
-				}
-				for(var i=0; i < 2; i++) {
-					data.pop()
-				}
-				data = data.join()
-				res.end(JSON.stringify({fileSize: data.length}))
+			var newdata = data[4]
+			for(var i=5; i < data.length - 2; i++) {
+				newdata += '\r\n' + data[i]
 			}
+			res.writeHead(200, '{"Content-Type": "application/json"}')
+			res.end(JSON.stringify({fileSize: newdata.length}))
 		})
 	}
 }

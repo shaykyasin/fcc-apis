@@ -6,6 +6,49 @@
 	<title>Shayk Yasin - Sizer</title>
 	<link rel="shortcut icon" href="http://shaykyasin.github.io/favicon.ico">
 	<link href="../style.css" rel="stylesheet">
+	<style type="text/css">
+		.inputfile {
+			width: 0.1px;
+			height: 0.1px;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+		}
+		.inputfile + label, #upload {
+			font-family: sans-serif;
+			font-size: 24px;
+			border: 0;
+			outline: none;
+			border-radius: 10px 0 0 10px;
+			color: white;
+			background: rgba(0,0,0,0.65);
+			padding: 14px 16px;
+			height: 56px;
+			cursor: pointer;
+			margin-left: 5%;
+		}
+		#upload{
+			margin-left: -8px; 
+			background: rgba(255,255,255,0.85);
+			color: black;
+			border-radius: 0 10px 10px 0;
+		}
+		#upload:hover {
+			background: rgba(255,255,255,1);
+			transition: 0.2s;
+		}
+		@media (max-width: 480px) {
+			.inputfile + label, #upload {
+				font-size: 16px;
+				height: 39px;
+				padding: 10px;
+			}
+			#upload{
+				margin-left: -6px;
+			}
+		}
+	</style>
 </head>
 <body>
 	<div id="octo"><a href="https://github.com/shaykyasin/fcc-apis" target="blank"><img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/white/png/64/github.png" alt="find me on github"/></a>
@@ -32,7 +75,7 @@
 			fdata = new FormData(form);
 
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "sizer/data", true);
+			xhr.open("POST", "./data", true);
 			xhr.onload = function() {
 				if (xhr.status == 200) {
 					var data = JSON.parse(xhr.responseText);

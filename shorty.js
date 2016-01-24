@@ -39,7 +39,7 @@ module.exports = function(query, req, res) {
 			}
 		}
 	} else {
-		sendError(res, 'Wrong Usage. Please take a look here: ' + req.headers.host + '/shorty')
+		sendError(res, 'Wrong Usage/Invalid URL. Please take a look here: ' + req.headers.host + '/shorty')
 	}
 }
 

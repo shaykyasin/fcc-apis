@@ -10,14 +10,14 @@ body {
 	min-height: 25em;
 	overflow: hidden;
 	margin: 0 auto;
-	background: rgba(251,26,116,1);
-	background: -moz-linear-gradient(top, rgba(251,26,116,1) 0%, rgba(255,96,28,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(251,26,116,1)), color-stop(100%, rgba(255,96,28,1)));
-	background: -webkit-linear-gradient(top, rgba(251,26,116,1) 0%, rgba(255,96,28,1) 100%);
-	background: -o-linear-gradient(top, rgba(251,26,116,1) 0%, rgba(255,96,28,1) 100%);
-	background: -ms-linear-gradient(top, rgba(251,26,116,1) 0%, rgba(255,96,28,1) 100%);
-	background: linear-gradient(to bottom, rgba(251,26,116,1) 0%, rgba(255,96,28,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb1a74', endColorstr='#ff601c', GradientType=0 );
+	background: #E5186A;
+	background: -moz-linear-gradient(top, #E5186A 0%, #ED591A 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #E5186A), color-stop(100%, #ED591A));
+	background: -webkit-linear-gradient(top, #E5186A 0%, #ED591A 100%);
+	background: -o-linear-gradient(top, #E5186A 0%, #ED591A 100%);
+	background: -ms-linear-gradient(top, #E5186A 0%, #ED591A 100%);
+	background: linear-gradient(to bottom, #E5186A 0%, #ED591A 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E5186A', endColorstr='#ED591A', GradientType=0 );
 }
 h1 {
 	font-size: 3em;
@@ -44,37 +44,6 @@ a:hover {
 }
 #octo:hover {
 	transform: scale(1.1);
-}
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-.inputfile + label, #upload {
-	font-family: sans-serif;
-	font-size: 24px;
-	border: 0;
-	outline: none;
-	border-radius: 10px 0 0 10px;
-	color: white;
-	background: rgba(0,0,0,0.65);
-	padding: 14px 16px;
-	height: 56px;
-	cursor: pointer;
-	margin-left: 5%;
-}
-#upload{
-	margin-left: -8px; 
-	background: rgba(255,255,255,0.85);
-	color: black;
-	border-radius: 0 10px 10px 0;
-}
-#upload:hover {
-	background: rgba(255,255,255,1);
-	transition: 0.2s;
 }
 
 @media (max-width: 480px) {
